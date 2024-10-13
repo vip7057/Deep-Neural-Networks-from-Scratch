@@ -60,17 +60,16 @@ This project implements a Fully Connected Neural Network (FCN) entirely from scr
 
 ---
 ## How to Run
-- 1. Clone the repository:
+
+1. Clone the repository:
 ```bash
 git clone https://github.com/your_username/fcn-from-scratch.git
 ```
-
-- 2. Install the required dependencies:
+2. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-- 3. To train the neural network:
+3. To train the neural network:
 
 ```python
 from NeuralNetwork import NeuralNetwork
@@ -82,9 +81,8 @@ from Loss import CrossEntropyLoss
 # Define your data layer and loss layer
 # Initialize Neural Network
 ```
-
-- 4. Implement Training Loop according to your requiremnets.
+4. Implement a Training Loop according to your requirements.
 ---
 ## Contributors
-- Email: vipulpatil7057@gmailcom
+- Email: vipulpatil7057@gmail.com
 - Email: sushantnemade15@gmail.com
