@@ -117,107 +117,17 @@ cd Deep-Neural-Networks-from-Scratch/CNN
 ```bash
 pip install -r requirements.txt
 ```
-3. To train the neural network:
-
-```python
-from NeuralNetwork import NeuralNetwork
-from Optimizers import Sgd
-from Layers.FullyConnected import FullyConnected
-from Layers.ReLU import ReLU
-from Layers.SoftMax import SoftMax
-from Loss import CrossEntropyLoss
-# Define your data layer and loss layer
-# Initialize Neural Network
-```
-4. Implement a Training Loop according to your requirements.
----
-## Contributors
-- Email: vipulpatil7057@gmail.com
-- Email: sushantnemade15@gmail.com
-=======
-# Fully Connected Neural Network (FCN) from Scratch
-
-This project implements a Fully Connected Neural Network (FCN) entirely from scratch in Python, using basic numpy operations. The implementation covers key components like layers, activation functions, loss functions, optimizers, and the forward and backward passes necessary for training the network.
-
-![FCN Architecture](https://www.researchgate.net/profile/Faiq-Khalid/publication/333336147/figure/fig2/AS:767975674093575@1560111077953/Illustration-of-a-fully-connected-neural-network.png)
-
-## Features
-- Implementation of a Fully Connected Neural Network (FCN) without any high-level libraries like TensorFlow or PyTorch.
-- Custom layers, including FullyConnected, ReLU, and SoftMax layers.
-- Cross-Entropy Loss for classification tasks.
-- SGD (Stochastic Gradient Descent) as an optimizer.
-- Forward and backward propagation from scratch.
-
-## Project Structure
-
-```bash
-.
-├── Layers
-│   ├── Base.py             # Base Layer Class
-│   ├── FullyConnected.py    # Fully Connected Layer
-│   ├── ReLU.py              # ReLU Activation Layer
-│   ├── SoftMax.py           # Softmax Layer
-├── Loss.py                  # Cross-Entropy Loss Function
-├── NeuralNetwork.py         # Main Neural Network Class
-├── Optimizers.py            # SGD Optimizer Class
-└── README.md                # Project Documentation
-```
----
-## Code Explanation
-### Layers
-- **Base Layer (Base.py):**
-  - The base class for all layers, defines a trainable property.
-
-- **Fully Connected Layer (FullyConnected.py):**
-  - Implements a fully connected layer with forward and backward propagation.
-  - Uses bias for each input.
-  - Supports training and optimization of weights.
-  
-- **ReLU Layer (ReLU.py):**
-  - Implements ReLU (Rectified Linear Unit) activation function.
-  - Provides both forward and backward propagation functions.
-
-- **Softmax Layer (SoftMax.py):**
-  - Softmax activation for multi-class classification.
-  - Converts logits into probabilities.
-
-### Loss
-
-- **Cross-Entropy Loss (Loss.py):**
-  - Implements forward and backward passes for calculating the cross-entropy loss, typically used in classification tasks.
-
-### Optimizers
-
-- **SGD Optimizer (Optimizers.py):**
-  - Stochastic Gradient Descent (SGD) with a simple learning rate update rule for weight optimization.
-
-### Neural Network
-- **Neural Network (NeuralNetwork.py):**
-  - Handles the structure and workflow of the neural network.
-  - Supports adding layers, forward pass, backpropagation, and updating weights through training.
-
----
-## How to Run
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your_username/fcn-from-scratch.git
-```
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
 3. To build a CNN using these components:
 Create a network with layers like Conv, Pooling, Flatten, and FullyConnected, and train it using optimizers like SGD. Here's an example to get you started:
 
 ```python
-from src_to_implement.Layers.Conv import Conv
-from src_to_implement.Layers.Pooling import Pooling
-from src_to_implement.Layers.FullyConnected import FullyConnected
-from src_to_implement.Layers.Relu import Relu
-from src_to_implement.Layers.Flatten import Flatten
-from src_to_implement.Initializers.He import He
-from src_to_implement.Optimizers.Sgd import Sgd
+from Layers.Conv import Conv
+from Layers.Pooling import Pooling
+from Layers.FullyConnected import FullyConnected
+from Layers.Relu import Relu
+from Layers.Flatten import Flatten
+from Initializers import He
+from Optimizers import Adam
 
 # Initialize the network
 conv_layer = Conv(stride_shape=(1, 1), convolution_shape=(1, 3, 3), num_kernels=8)
@@ -238,4 +148,5 @@ output = relu_layer.forward(output)ing to your requirements.
 ## Contributors
 - Email: vipulpatil7057@gmail.com
 - Email: sushantnemade15@gmail.com
+
 
