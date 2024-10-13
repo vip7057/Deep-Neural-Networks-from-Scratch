@@ -36,75 +36,70 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
 - **Fully Connected Layer (FullyConnected.py)**
   - A fully connected (dense) layer that connects each input node to every output node. The weights and biases are trainable and can be updated using optimizers during training.
 
-- Key Methods:
+  - Key Methods:
     - ```forward(input_tensor): Computes the output of the layer.```
     - ```[backward(error_tensor)]: Computes the gradient and passes it back to earlier layers.```
   
-3. ReLU Layer (Relu.py)
-Applies the ReLU activation function element-wise, outputting max(0, x) for each input.
+- **ReLU Layer (Relu.py)**
+  - Applies the ReLU activation function element-wise, outputting max(0, x) for each input.
 
-Key Methods:
+  - Key Methods:
+    - ```forward(input_tensor): Computes ReLU on the input.```
+    - ```backward(error_tensor): Passes the gradient for backpropagation.```
 
-forward(input_tensor): Computes ReLU on the input.
-backward(error_tensor): Passes the gradient for backpropagation.
-4. SoftMax Layer (SoftMax.py)
-Implements the SoftMax activation function, which normalizes the output into probability distribution.
+- **SoftMax Layer (SoftMax.py)**
+  - Implements the SoftMax activation function, which normalizes the output into probability distribution.
 
-Key Methods:
+  - Key Methods:
+    - ```forward(input_tensor): Computes the SoftMax probabilities.```
+    - ```backward(error_tensor): Calculates the gradients for backpropagation.```
+      
+- **Convolutional Layer (Conv.py)**
+  - Implements the convolution operation. This layer applies kernels (filters) over the input to extract spatial features. Supports multiple kernels, padding, and strides.
 
-forward(input_tensor): Computes the SoftMax probabilities.
-backward(error_tensor): Calculates the gradients for backpropagation.
-5. Convolutional Layer (Conv.py)
-Implements the convolution operation. This layer applies kernels (filters) over the input to extract spatial features. Supports multiple kernels, padding, and strides.
+  - Key Methods:
+    - ```forward(input_tensor): Convolves the input with learnable filters (weights) and adds bias.```
+    - ```backward(error_tensor): Computes gradients with respect to weights and propagates errors to previous layers.```
 
-Key Methods:
+- **Pooling Layer (Pooling.py)**
+  - Implements max pooling, which downsamples the input by taking the maximum value in each pooling region. The pooling shape and stride can be customized.
 
-forward(input_tensor): Convolves the input with learnable filters (weights) and adds bias.
-backward(error_tensor): Computes gradients with respect to weights and propagates errors to previous layers.
-initialize(weights_initializer, bias_initializer): Initializes the weights and biases using specified initialization methods.
-6. Pooling Layer (Pooling.py)
-Implements max pooling, which downsamples the input by taking the maximum value in each pooling region. The pooling shape and stride can be customized.
+  - Key Methods:
+    - ```forward(input_tensor): Applies max pooling to the input.```
+    - ```backward(error_tensor): Propagates the error for backpropagation based on the pooled regions.```
 
-Key Methods:
+- **Flatten Layer (Flatten.py)**
+  - Flattens the input from a multi-dimensional tensor (e.g., for images) into a 1D tensor, which is often required before passing data to a fully connected layer.
 
-forward(input_tensor): Applies max pooling to the input.
-backward(error_tensor): Propagates the error for backpropagation based on the pooled regions.
-7. Flatten Layer (Flatten.py)
-Flattens the input from a multi-dimensional tensor (e.g., for images) into a 1D tensor, which is often required before passing data to a fully connected layer.
-
-Key Methods:
-
-forward(input_tensor): Flattens the input.
-backward(error_tensor): Reshapes the error tensor for backpropagation.
-8. Initializers (initializers.py)
-Defines several initialization methods to initialize weights and biases of layers:
-
-Constant: Initializes the weights to a constant value.
-UniformRandom: Initializes weights randomly from a uniform distribution.
-Xavier: An initialization scheme suited for layers with sigmoid or tanh activations.
-He: An initialization scheme suited for layers with ReLU activations.
-9. Optimizers (optimizers.py)
-Implements optimization techniques used during training to update the weights and biases:
-
-SGD: Stochastic Gradient Descent without momentum.
-SGD with Momentum: Adds momentum to standard SGD for faster convergence.
-10. Loss Functions (loss.py)
-Implements the cross-entropy loss function commonly used for classification tasks.
-
-Key Methods:
-
-forward(predicted_tensor, label_tensor): Computes the loss.
-backward(label_tensor): Computes the gradient with respect to the predictions.
+  - Key Methods:
+    - ```forward(input_tensor): Flattens the input.```
+    - ```backward(error_tensor): Reshapes the error tensor for backpropagation.```
+---
+    
+### Initialization
+- **Initializers (initializers.py)**
+  - Defines several initialization methods to initialize weights and biases of layers:
+    - **Constant:** Initializes the weights to a constant value.
+    - **UniformRandom:** Initializes weights randomly from a uniform distribution.
+    - **Xavier:** An initialization scheme suited for layers with sigmoid or tanh activations.
+    - **He:** An initialization scheme suited for layers with ReLU activations.
+---
 
 ### Loss
 
 - **Cross-Entropy Loss (Loss.py):**
   - Implements forward and backward passes for calculating the cross-entropy loss, typically used in classification tasks.
-
+  - Key Methods:
+    - ```forward(predicted_tensor, label_tensor): Computes the loss.```
+    - ```backward(label_tensor): Computes the gradient with respect to the predictions.```
+---
 ### Optimizers
 
 - **SGD Optimizer (Optimizers.py):**
-  - Stochastic Gradient Descent (SGD) with a simple learning rate update rule for weight optimization.
+  - Implements optimization techniques used during training to update the weights and biases:
+    - **SGD:** Stochastic Gradient Descent without momentum.
+    - **SGD with Momentum:** Adds momentum to standard SGD for faster convergence.
+--
 
 ### Neural Network
 - **Neural Network (NeuralNetwork.py):**
