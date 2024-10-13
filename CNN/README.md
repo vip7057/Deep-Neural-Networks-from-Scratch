@@ -1,4 +1,3 @@
-<<<<<<< HEAD:README.md
 # Convolutional Neural Network (CNN) from Scratch
 
 This project implements a Convolutional Neural Network (CNN) entirely from scratch in Python, using basic numpy operations. The core modules include essential layers for CNNs such as convolution, pooling, flattening, and fully connected layers. Additionally, several initializers, loss functions, and optimizers are implemented to provide a flexible training environment for the network.
@@ -111,7 +110,8 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your_username/fcn-from-scratch.git
+git clone https://github.com/vip7057/Deep-Neural-Networks-from-Scratch.git
+cd Deep-Neural-Networks-from-Scratch/CNN
 ```
 2. Install the required dependencies:
 ```bash
@@ -207,19 +207,33 @@ git clone https://github.com/your_username/fcn-from-scratch.git
 ```bash
 pip install -r requirements.txt
 ```
-3. To train the neural network:
+3. To build a CNN using these components:
+Create a network with layers like Conv, Pooling, Flatten, and FullyConnected, and train it using optimizers like SGD. Here's an example to get you started:
 
 ```python
-from NeuralNetwork import NeuralNetwork
-from Optimizers import Sgd
-from Layers.FullyConnected import FullyConnected
-from Layers.ReLU import ReLU
-from Layers.SoftMax import SoftMax
-from Loss import CrossEntropyLoss
-# Define your data layer and loss layer
-# Initialize Neural Network
+from src_to_implement.Layers.Conv import Conv
+from src_to_implement.Layers.Pooling import Pooling
+from src_to_implement.Layers.FullyConnected import FullyConnected
+from src_to_implement.Layers.Relu import Relu
+from src_to_implement.Layers.Flatten import Flatten
+from src_to_implement.Initializers.He import He
+from src_to_implement.Optimizers.Sgd import Sgd
+
+# Initialize the network
+conv_layer = Conv(stride_shape=(1, 1), convolution_shape=(1, 3, 3), num_kernels=8)
+pooling_layer = Pooling(stride_shape=(2, 2), pooling_shape=(2, 2))
+flatten_layer = Flatten()
+fc_layer = FullyConnected(64, 10)
+relu_layer = Relu()
+
+# Example forward pass
+input_tensor = np.random.rand(5, 1, 28, 28)  # Batch size 5, 1 channel, 28x28 images
+output = conv_layer.forward(input_tensor)
+output = pooling_layer.forward(output)
+output = flatten_layer.forward(output)
+output = fc_layer.forward(output)
+output = relu_layer.forward(output)ing to your requirements.
 ```
-4. Implement a Training Loop according to your requirements.
 ---
 ## Contributors
 - Email: vipulpatil7057@gmail.com
