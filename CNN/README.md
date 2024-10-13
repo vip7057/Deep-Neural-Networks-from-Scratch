@@ -30,21 +30,71 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
 ---
 ## Code Explanation
 ### Layers
-- **Base Layer (Base.py):**
-  - The base class for all layers, defines a trainable property.
+- **Base Layer (Base.py)**
+  - Provides the basic structure and interface for all layers. It handles common attributes like trainable and optimizer, and defines the essential forward() and backward() methods which are inherited by other layers.
 
-- **Fully Connected Layer (FullyConnected.py):**
-  - Implements a fully connected layer with forward and backward propagation.
-  - Uses bias for each input.
-  - Supports training and optimization of weights.
+- **Fully Connected Layer (FullyConnected.py)**
+  - A fully connected (dense) layer that connects each input node to every output node. The weights and biases are trainable and can be updated using optimizers during training.
+
+- Key Methods:
+    -[forward(input_tensor)]: Computes the output of the layer.
+    -[backward(error_tensor)]: Computes the gradient and passes it back to earlier layers.
   
-- **ReLU Layer (ReLU.py):**
-  - Implements ReLU (Rectified Linear Unit) activation function.
-  - Provides both forward and backward propagation functions.
+3. ReLU Layer (Relu.py)
+Applies the ReLU activation function element-wise, outputting max(0, x) for each input.
 
-- **Softmax Layer (SoftMax.py):**
-  - Softmax activation for multi-class classification.
-  - Converts logits into probabilities.
+Key Methods:
+
+forward(input_tensor): Computes ReLU on the input.
+backward(error_tensor): Passes the gradient for backpropagation.
+4. SoftMax Layer (SoftMax.py)
+Implements the SoftMax activation function, which normalizes the output into probability distribution.
+
+Key Methods:
+
+forward(input_tensor): Computes the SoftMax probabilities.
+backward(error_tensor): Calculates the gradients for backpropagation.
+5. Convolutional Layer (Conv.py)
+Implements the convolution operation. This layer applies kernels (filters) over the input to extract spatial features. Supports multiple kernels, padding, and strides.
+
+Key Methods:
+
+forward(input_tensor): Convolves the input with learnable filters (weights) and adds bias.
+backward(error_tensor): Computes gradients with respect to weights and propagates errors to previous layers.
+initialize(weights_initializer, bias_initializer): Initializes the weights and biases using specified initialization methods.
+6. Pooling Layer (Pooling.py)
+Implements max pooling, which downsamples the input by taking the maximum value in each pooling region. The pooling shape and stride can be customized.
+
+Key Methods:
+
+forward(input_tensor): Applies max pooling to the input.
+backward(error_tensor): Propagates the error for backpropagation based on the pooled regions.
+7. Flatten Layer (Flatten.py)
+Flattens the input from a multi-dimensional tensor (e.g., for images) into a 1D tensor, which is often required before passing data to a fully connected layer.
+
+Key Methods:
+
+forward(input_tensor): Flattens the input.
+backward(error_tensor): Reshapes the error tensor for backpropagation.
+8. Initializers (initializers.py)
+Defines several initialization methods to initialize weights and biases of layers:
+
+Constant: Initializes the weights to a constant value.
+UniformRandom: Initializes weights randomly from a uniform distribution.
+Xavier: An initialization scheme suited for layers with sigmoid or tanh activations.
+He: An initialization scheme suited for layers with ReLU activations.
+9. Optimizers (optimizers.py)
+Implements optimization techniques used during training to update the weights and biases:
+
+SGD: Stochastic Gradient Descent without momentum.
+SGD with Momentum: Adds momentum to standard SGD for faster convergence.
+10. Loss Functions (loss.py)
+Implements the cross-entropy loss function commonly used for classification tasks.
+
+Key Methods:
+
+forward(predicted_tensor, label_tensor): Computes the loss.
+backward(label_tensor): Computes the gradient with respect to the predictions.
 
 ### Loss
 
