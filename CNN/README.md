@@ -38,7 +38,7 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
 
   - Key Methods:
     - ```forward(input_tensor): Computes the output of the layer.```
-    - ```[backward(error_tensor)]: Computes the gradient and passes it back to earlier layers.```
+    - ```backward(error_tensor): Computes the gradient and passes it back to earlier layers.```
   
 - **ReLU Layer (Relu.py)**
   - Applies the ReLU activation function element-wise, outputting max(0, x) for each input.
