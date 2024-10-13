@@ -2,7 +2,7 @@
 
 This project implements a Convolutional Neural Network (CNN) entirely from scratch in Python, using basic numpy operations. The core modules include essential layers for CNNs such as convolution, pooling, flattening, and fully connected layers. Additionally, several initializers, loss functions, and optimizers are implemented to provide a flexible training environment for the network.
 
-![CNN Architecture](Illustration-of-a-fully-connected-neural-network.png)
+![CNN Architecture](cnn.png)
 
 ## Features
 - Implementation of a Convolutional Neural Network (CNN) without any high-level libraries like TensorFlow or PyTorch.
