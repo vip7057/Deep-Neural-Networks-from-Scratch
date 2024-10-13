@@ -2,7 +2,7 @@
 
 This project implements a Fully Connected Neural Network (FCN) entirely from scratch in Python, using basic numpy operations. The implementation covers key components like layers, activation functions, loss functions, optimizers, and the forward and backward passes necessary for training the network.
 
-![FCN Architecture]([https://www.researchgate.net/figure/Illustration-of-a-fully-connected-neural-network_fig2_333336147])
+![FCN Architecture]([https://www.researchgate.net/figure/Illustration-of-a-fully-connected-neural-network_fig2_333336147](https://sl.bing.net/hWwEwNnKX1w)])
 
 ## Features
 - Implementation of a Fully Connected Neural Network (FCN) without any high-level libraries like TensorFlow or PyTorch.
