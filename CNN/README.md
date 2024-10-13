@@ -37,8 +37,8 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
   - A fully connected (dense) layer that connects each input node to every output node. The weights and biases are trainable and can be updated using optimizers during training.
 
 - Key Methods:
-    -```forward(input_tensor): Computes the output of the layer.```
-    -```[backward(error_tensor)]: Computes the gradient and passes it back to earlier layers.```
+    - ```forward(input_tensor): Computes the output of the layer.```
+    - ```[backward(error_tensor)]: Computes the gradient and passes it back to earlier layers.```
   
 3. ReLU Layer (Relu.py)
 Applies the ReLU activation function element-wise, outputting max(0, x) for each input.
