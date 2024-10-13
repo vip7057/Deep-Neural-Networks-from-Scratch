@@ -99,7 +99,7 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
   - Implements optimization techniques used during training to update the weights and biases:
     - **SGD:** Stochastic Gradient Descent without momentum.
     - **SGD with Momentum:** Adds momentum to standard SGD for faster convergence.
---
+---
 
 ### Neural Network
 - **Neural Network (NeuralNetwork.py):**
@@ -224,4 +224,4 @@ from Loss import CrossEntropyLoss
 ## Contributors
 - Email: vipulpatil7057@gmail.com
 - Email: sushantnemade15@gmail.com
->>>>>>> bcda3b2 (added readme):FCN/README.md
+
