@@ -1,29 +1,30 @@
 <<<<<<< HEAD:README.md
-# Fully Connected Neural Network (FCN) from Scratch
+# Convolutional Neural Network (CNN) from Scratch
 
-This project implements a Fully Connected Neural Network (FCN) entirely from scratch in Python, using basic numpy operations. The implementation covers key components like layers, activation functions, loss functions, optimizers, and the forward and backward passes necessary for training the network.
+This project implements a Convolutional Neural Network (CNN) entirely from scratch in Python, using basic numpy operations. The core modules include essential layers for CNNs such as convolution, pooling, flattening, and fully connected layers. Additionally, several initializers, loss functions, and optimizers are implemented to provide a flexible training environment for the network.
 
-![FCN Architecture](Illustration-of-a-fully-connected-neural-network.png)
+![CNN Architecture](Illustration-of-a-fully-connected-neural-network.png)
 
 ## Features
-- Implementation of a Fully Connected Neural Network (FCN) without any high-level libraries like TensorFlow or PyTorch.
-- Custom layers, including FullyConnected, ReLU, and SoftMax layers.
-- Cross-Entropy Loss for classification tasks.
-- SGD (Stochastic Gradient Descent) as an optimizer.
-- Forward and backward propagation from scratch.
+- Implementation of a Convolutional Neural Network (CNN) without any high-level libraries like TensorFlow or PyTorch.
+
 
 ## Project Structure
 
 ```bash
 .
 ├── Layers
-│   ├── Base.py             # Base Layer Class
+│   ├── Base.py              # Base Layer Class
+│   ├── Conv.py              # Convolution Layer Class
+│   ├── Flatten.py           # Flatten Layer Class
 │   ├── FullyConnected.py    # Fully Connected Layer
+│   ├── Pooling.py           # Pooling Layer Class
 │   ├── ReLU.py              # ReLU Activation Layer
 │   ├── SoftMax.py           # Softmax Layer
+├── Initializers.py          # Different weight and bias initializers
 ├── Loss.py                  # Cross-Entropy Loss Function
 ├── NeuralNetwork.py         # Main Neural Network Class
-├── Optimizers.py            # SGD Optimizer Class
+├── Optimizers.py            # SGD and SGD with Momentum Optimizer Class
 └── README.md                # Project Documentation
 ```
 ---
