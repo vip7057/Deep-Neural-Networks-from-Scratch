@@ -26,37 +26,36 @@ This project implements a Fully Connected Neural Network (FCN) entirely from scr
 ---
 ## Code Explanation
 ### Layers
-**Base Layer (Base.py):**
+- **Base Layer (Base.py):**
+  - The base class for all layers, defines a trainable property.
 
--The base class for all layers, defines a trainable property.
-
-**Fully Connected Layer (FullyConnected.py):**
-- Implements a fully connected layer with forward and backward propagation.
-- Uses bias for each input.
-- Supports training and optimization of weights.
+- **Fully Connected Layer (FullyConnected.py):**
+  - Implements a fully connected layer with forward and backward propagation.
+  - Uses bias for each input.
+  - Supports training and optimization of weights.
   
-**ReLU Layer (ReLU.py):**
-- Implements ReLU (Rectified Linear Unit) activation function.
-- Provides both forward and backward propagation functions.
+- **ReLU Layer (ReLU.py):**
+  - Implements ReLU (Rectified Linear Unit) activation function.
+  - Provides both forward and backward propagation functions.
 
-**Softmax Layer (SoftMax.py):**
-- Softmax activation for multi-class classification.
-- Converts logits into probabilities.
+- **Softmax Layer (SoftMax.py):**
+  - Softmax activation for multi-class classification.
+  - Converts logits into probabilities.
 
 ### Loss
 
-**Cross-Entropy Loss (Loss.py):**
-- Implements forward and backward passes for calculating the cross-entropy loss, typically used in classification tasks.
+- **Cross-Entropy Loss (Loss.py):**
+  - Implements forward and backward passes for calculating the cross-entropy loss, typically used in classification tasks.
 
 ### Optimizers
 
-**SGD Optimizer (Optimizers.py):**
-- Stochastic Gradient Descent (SGD) with a simple learning rate update rule for weight optimization.
+- **SGD Optimizer (Optimizers.py):**
+  - Stochastic Gradient Descent (SGD) with a simple learning rate update rule for weight optimization.
 
 ### Neural Network
-**Neural Network (NeuralNetwork.py):**
-- Handles the structure and workflow of the neural network.
-- Supports adding layers, forward pass, backpropagation, and updating weights through training.
+- **Neural Network (NeuralNetwork.py):**
+  - Handles the structure and workflow of the neural network.
+  - Supports adding layers, forward pass, backpropagation, and updating weights through training.
 
 ---
 ## How to Run
