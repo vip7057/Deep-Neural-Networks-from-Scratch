@@ -113,10 +113,8 @@ This project implements a Convolutional Neural Network (CNN) entirely from scrat
 git clone https://github.com/vip7057/Deep-Neural-Networks-from-Scratch.git
 cd Deep-Neural-Networks-from-Scratch/CNN
 ```
-2. Install the required dependencies:
-```bash
-pip install -r requirements.txt
-```
+2. Install the required dependencies:(Numpy and Scipy)
+
 3. To build a CNN using these components:
 Create a network with layers like Conv, Pooling, Flatten, and FullyConnected, and train it using optimizers like SGD. Here's an example to get you started:
 
